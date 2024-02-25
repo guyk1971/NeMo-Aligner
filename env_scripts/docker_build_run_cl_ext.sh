@@ -1,4 +1,3 @@
-#!/bin/bash
 DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 cd $DIR
 
@@ -7,7 +6,6 @@ MY_GID=$(id -g)
 MY_UNAME=$(id -un)
 mkdir -p ${DIR}/.vscode-server
 LINK=$(realpath --relative-to="/home/${MY_UNAME}" "$DIR" -s)
-# BASE_IMAGE=nemo_aligner:latest
 BASE_IMAGE=gitlab-master.nvidia.com/dl/joc/nemo-aligner:20240105-nemo-1.22.0-mlm-0.4.0-TE-1.1
 IMAGE=nemo_aligner_${MY_UNAME}
 if [ -z "$(docker images -q ${IMAGE})" ]; then

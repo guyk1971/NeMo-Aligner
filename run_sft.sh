@@ -12,10 +12,10 @@ python examples/nlp/gpt/train_gpt_sft.py \
    model.answer_only_loss=True \
    model.data.num_workers=0 \
    model.data.train_ds.micro_batch_size=1 \
-   model.data.train_ds.global_batch_size=32 \
+   model.data.train_ds.global_batch_size=16 \
    model.data.train_ds.file_path=databricks-dolly-15k-output.jsonl \
    model.data.validation_ds.micro_batch_size=1 \
-   model.data.validation_ds.global_batch_size=32 \
+   model.data.validation_ds.global_batch_size=16 \
    model.data.validation_ds.file_path=databricks-dolly-15k-output.jsonl \
    exp_manager.create_wandb_logger=True \
    exp_manager.explicit_log_dir=./results \
